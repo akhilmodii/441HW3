@@ -13,7 +13,7 @@ object protocol {
 
   case class forwardWork(workerID: String, workID: String, forward: Boolean)
 
-  case class failed(workerID: String, workId: String, job: Int, actorRef: ActorRef)
+  case class failed(workerID: String, workId: String) //, job: Int, actorRef: ActorRef)
 
   case class workDone(workerID: String, workID: String, result: Any, job: Int, actorRef: ActorRef)
 

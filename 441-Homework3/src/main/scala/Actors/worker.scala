@@ -6,12 +6,16 @@ import akka.actor._
 import scala.collection.mutable
 import scala.concurrent.duration._
 import scala.util.matching.Regex
-import Actors.{Work, workExecutor, masterActor}
+import Actors.{Work, masterActor, workExecutor}
+
+import scala.concurrent.Await
 
 class worker(masterProxy: ActorRef, workerID: String, workerFinger: mutable.TreeMap[String, (Range, String)], numWorkers: Int) extends Actor with ActorLogging with Timers {
 
   import Actors.protocol._
   import context.dispatcher
+
+  Await.result(context.system.terminate(), 5.seconds)
 
   val ID: String = workerID
   var finger: mutable.TreeMap[String, (Range, String)] = workerFinger
