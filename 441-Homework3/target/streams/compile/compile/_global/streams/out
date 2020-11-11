@@ -1,2 +1,22 @@
-[debug] Acquiring lock on file C:\Users\modia\UIC\Fall 2020\CS 441\441-Homework3\project\target\.sbt-compilation-infos\root-441-homework3-compile\.sbt-idea-lock ...
-[debug] Releasing lock on file C:\Users\modia\UIC\Fall 2020\CS 441\441-Homework3\project\target\.sbt-compilation-infos\root-441-homework3-compile\.sbt-idea-lock.
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\modia\UIC\Fall 2020\CS 441\441-Homework3\src\main\scala\Actors\worker.scala:9:16: imported `Work' is permanently hidden by definition of object Work in package Actors[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport Actors.{Work, masterActor, workExecutor}[0m
+[0m[[0m[33mwarn[0m] [0m[0m               ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\modia\UIC\Fall 2020\CS 441\441-Homework3\src\main\scala\Actors\worker.scala:9:22: imported `masterActor' is permanently hidden by definition of object masterActor in package Actors[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport Actors.{Work, masterActor, workExecutor}[0m
+[0m[[0m[33mwarn[0m] [0m[0m                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\modia\UIC\Fall 2020\CS 441\441-Homework3\src\main\scala\Actors\worker.scala:9:35: imported `workExecutor' is permanently hidden by definition of object workExecutor in package Actors[0m
+[0m[[0m[33mwarn[0m] [0m[0mimport Actors.{Work, masterActor, workExecutor}[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\modia\UIC\Fall 2020\CS 441\441-Homework3\src\main\scala\chordAlgo\fingerTable.scala:19:14: a pure expression does nothing in statement position[0m
+[0m[[0m[33mwarn[0m] [0m[0m      return nextNode[0m
+[0m[[0m[33mwarn[0m] [0m[0m             ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\modia\UIC\Fall 2020\CS 441\441-Homework3\src\main\scala\chordAlgo\fingerTable.scala:19:7: enclosing method main has result type Unit: return value discarded[0m
+[0m[[0m[33mwarn[0m] [0m[0m      return nextNode[0m
+[0m[[0m[33mwarn[0m] [0m[0m      ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\modia\UIC\Fall 2020\CS 441\441-Homework3\src\main\scala\Actors\worker.scala:34:10: patterns after a variable pattern cannot match (SLS 8.1.1)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    case workReady =>[0m
+[0m[[0m[33mwarn[0m] [0m[0m         ^[0m
+[0m[[0m[33mwarn[0m] [0m[0mC:\Users\modia\UIC\Fall 2020\CS 441\441-Homework3\src\main\scala\Actors\worker.scala:37:51: unreachable code due to variable pattern 'workReady' on line 34[0m
+[0m[[0m[33mwarn[0m] [0m[0m    case Work(workID: String, job: Int, frontEnd) =>[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                  ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m7 warnings found[0m

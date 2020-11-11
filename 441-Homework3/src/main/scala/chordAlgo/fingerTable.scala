@@ -6,7 +6,7 @@ package chordAlgo
 
 //import com.ashessin.cs441.project.workers.{Work, Worker}
 import Actors.Work
-import actors.worker
+import Actors.worker
 import akka.actor.ActorRef
 
 

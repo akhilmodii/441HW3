@@ -4,7 +4,7 @@ import java.util.concurrent.ThreadLocalRandom
 
 import Actors.{Work, masterActor, masterSingleton, workResult}
 import Main.conf
-import actors.worker
+import Actors.worker
 import akka.actor.{Actor, ActorLogging, ActorRef, ActorSystem, Props, Timers}
 import akka.cluster.pubsub.DistributedPubSubMediator.Put
 import akka.cluster.pubsub.{DistributedPubSub, DistributedPubSubMediator}
@@ -66,14 +66,21 @@ object Main {
 
   }
 
-  def config(portNumber: Int, actorRole: String): Config = {
-    ConfigFactory.parseString(s"""akka.remote.netty.tcp.port: $portNumber akka.cluster.roles: $actorRole""").withFallback(ConfigFactory.load())
-  }
+//  def config(portNumber: Int, actorRole: String): Config = {
+//    ConfigFactory.parseString(s"""akka.remote.netty.tcp.port= $portNumber akka.cluster.roles= $actorRole""").withFallback(ConfigFactory.load())
+//  }
+
+  def config(port: Int, role: String): Config =
+    ConfigFactory.parseString(s"""
+      akka.remote.netty.tcp.port=$port
+      akka.cluster.roles=[$role]
+    """).withFallback(ConfigFactory.load())
+
 
   def startWorker(portNumber: Int, numWorkers: Int): Unit = {
     val system: ActorSystem = ActorSystem("Cluster", config(portNumber, "workers"))
     val masterProxy = system.actorOf(masterSingleton.proxyProps(system), name="masterProxy")
-    (0 until numWorkers).foreach(n => {
+    (1 until numWorkers).foreach(n => {
       val fingerTableEntry = new FTable(n, numWorkers)
       system.actorOf(worker.props(masterProxy, n.toString, fingerTableEntry.finger, numWorkers), s"worker-$n")
     })

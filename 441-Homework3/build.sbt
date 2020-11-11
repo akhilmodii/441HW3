@@ -59,7 +59,7 @@ lazy val akkaManagement = "1.0.5"
 
 fork in Test := true
 
-libraryDependencies += "com.typesafe" % "config" % "1.4.1"
+//libraryDependencies += "com.typesafe" % "config" % "1.4.1"
 
 //val AkkaManagementVersion = "1.0.9"
 libraryDependencies += "com.lightbend.akka.management" %% "akka-management" % akkaManagement
@@ -79,4 +79,4 @@ libraryDependencies ++= Seq(
   "commons-io"        %  "commons-io"                                     % "2.4"              % "test")
 
 
-mainClass in (Compile, run) := Some("main.Scala.Actors.Main")
+mainClass in (Compile, run) := Some("Main")

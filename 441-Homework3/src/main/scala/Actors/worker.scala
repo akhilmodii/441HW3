@@ -1,4 +1,4 @@
-package actors
+package Actors
 
 import akka.actor.SupervisorStrategy.{Restart, Stop}
 import akka.actor._
